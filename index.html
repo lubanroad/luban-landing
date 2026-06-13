@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路伴 · 道路駕駛陪練｜雙北一對一，從不敢上路到自己開回家</title>
+<meta name="description" content="路伴道路駕駛陪練，雙北一對一客製路線。已持照、卻不敢上路？停車、市區、上高速，陪你練到敢自己開回家。透明定價、可單堂體驗、雙北可接送。">
+<style>
+:root{
+  --coral:#FF6F61; --coral-dark:#E85544; --ink:#1F2933; --grey:#6B7280;
+  --bg:#FFFBF8; --card:#FFFFFF; --line:#F0E3DC; --soft:#FFF1ED;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft JhengHei","PingFang TC","Helvetica Neue",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:999px;font-size:17px;box-shadow:0 6px 18px rgba(255,111,97,.35);transition:.2s}
+.btn:hover{background:var(--coral-dark);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--coral);border:2px solid var(--coral);box-shadow:none}
+.imgph{background:repeating-linear-gradient(45deg,#fbeee9,#fbeee9 12px,#fff5f1 12px,#fff5f1 24px);border:1px dashed #e8c9bd;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#c79b8c;font-size:14px;text-align:center;padding:20px}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#FFF1ED 0%,#FFFBF8 70%);padding:54px 0 40px;text-align:center}
+.badge{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--coral);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:34px;line-height:1.35;letter-spacing:.5px}
+.hero h1 .hl{color:var(--coral)}
+.hero p.sub{font-size:18px;color:var(--grey);margin:16px auto 26px;max-width:540px}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust{margin-top:22px;font-size:14px;color:var(--grey)}
+.trust span{display:inline-block;margin:0 8px}
+
+section{padding:44px 0}
+h2.sec{font-size:24px;text-align:center;margin-bottom:8px}
+.sec-sub{text-align:center;color:var(--grey);margin-bottom:28px;font-size:15px}
+
+/* pain */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pain{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.pain b{color:var(--coral)}
+.pain p{font-size:15px;color:var(--grey);margin-top:4px}
+
+/* who */
+.who{background:var(--soft)}
+.who ul{list-style:none;max-width:560px;margin:0 auto}
+.who li{background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:10px;font-size:16px;border:1px solid var(--line)}
+.who li::before{content:"✅ ";}
+
+/* plans */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;position:relative}
+.plan.feature{border:2px solid var(--coral);box-shadow:0 10px 28px rgba(255,111,97,.15)}
+.plan .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:999px}
+.plan h3{font-size:19px}
+.plan .price{font-size:30px;font-weight:800;color:var(--coral);margin:8px 0 2px}
+.plan .unit{font-size:14px;color:var(--grey)}
+.plan .desc{font-size:14px;color:var(--grey);margin-top:8px;min-height:38px}
+.note{text-align:center;color:var(--grey);font-size:13px;margin-top:18px}
+
+/* steps */
+.steps{counter-reset:s}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.step .n{flex:0 0 36px;height:36px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+.step b{display:block;font-size:16px}
+.step p{font-size:14px;color:var(--grey)}
+
+/* why */
+.why{background:var(--soft)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.why .item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.why .item b{color:var(--coral)}
+
+/* faq */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;padding:14px 0;font-size:16px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"＋ ";color:var(--coral)}
+.faq details[open] summary::before{content:"－ ";}
+.faq p{padding:0 0 14px;color:var(--grey);font-size:15px}
+
+/* final cta */
+.final{background:linear-gradient(160deg,var(--coral),var(--coral-dark));color:#fff;text-align:center;padding:50px 0}
+.final h2{font-size:26px;color:#fff}
+.final p{margin:12px auto 24px;max-width:480px;opacity:.95}
+.final .btn{background:#fff;color:var(--coral)}
+
+footer{text-align:center;padding:30px 20px;color:var(--grey);font-size:13px}
+.legal{font-size:12px;color:#9aa3ad;max-width:620px;margin:14px auto 0;line-height:1.6}
+
+@media(max-width:560px){
+  .hero h1{font-size:27px}
+  .pain-grid,.plans,.why-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">雙北 · 一對一道路駕駛陪練</span>
+    <h1>有照，卻<span class="hl">不敢上路</span>？<br>路伴陪你，練到<span class="hl">敢開了</span>。</h1>
+    <p class="sub">我是安妮，路伴的持證教練。路伴只做一件事 —— 用你真實會走的路線，從停車、市區到上高速，一對一陪你，從不敢開練到敢開了。</p>
+    <div class="cta-row">
+      <a class="btn" href="#" data-cta="line">加 LINE 預約體驗 →</a>
+      <a class="btn ghost" href="#plans">看課程與價格</a>
+    </div>
+    <div class="trust">
+      <span>✅ 須已持有正式駕照</span><span>✅ 開自己的車或教練備車</span><span>✅ 一對一客製</span><span>✅ 雙北可接送</span><span>✅ 透明定價</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="imgph" style="height:200px">［此處放主視覺：安妮與學員在車旁的照片，或停車前後對比圖。圖片待補］</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec">這些情況，你中了幾個？</h2>
+    <p class="sec-sub">不敢上路不是你的問題，只是少了人陪你練。</p>
+    <div class="pain-grid">
+      <div class="pain"><b>考到照就沒再開</b><p>駕照放到過期，方向盤一握就緊張。</p></div>
+      <div class="pain"><b>停車就投降</b><p>路邊停車、倒車入庫，永遠停不進去。</p></div>
+      <div class="pain"><b>不敢上高速</b><p>匝道、變換車道、車速一快就慌。</p></div>
+      <div class="pain"><b>有特定路線要開</b><p>接送小孩、上下班通勤，想先練熟那條路。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2 class="sec">適合誰</h2>
+    <p class="sec-sub">（為符合法規，學員須已領有正式駕照；不限性別年齡，有照想上路都歡迎）</p>
+    <ul>
+      <li>已考到駕照、但長期沒開車、想重新上路的人</li>
+      <li>剛拿照的新手，想在真實道路再加強信心</li>
+      <li>新手爸媽、剛換工作需要開車通勤的人</li>
+      <li>只想針對停車、高速、夜間等弱點專修的人</li>
+    </ul>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="wrap">
+    <h2 class="sec">課程與價格</h2>
+    <p class="sec-sub">透明公開、不綁約。每次 2.5 小時，完整課程 3–4 次，可第一次上完再決定次數。<br>兩種車輛任你選 —— 開自己的車比較省，沒有車就交給教練備車。</p>
+
+    <h3 style="text-align:center;color:var(--coral);margin:6px 0 14px;font-size:18px">🚗 A · 教練備車（含保險車＋油資＋雙北接送）</h3>
+    <div class="plans">
+      <div class="plan">
+        <h3>體驗 1 次</h3>
+        <div class="price">$3,600</div><div class="unit">2.5 小時 · 轎車</div>
+        <p class="desc">先試合不合拍，休旅車 $4,300。</p>
+        <a class="btn ghost" href="#" data-cta="line">預約體驗</a>
+      </div>
+      <div class="plan">
+        <h3>3 次</h3>
+        <div class="price">$9,300</div><div class="unit">轎車 · 休旅 $12,200</div>
+        <p class="desc">市區、停車、高速一次到位。</p>
+        <a class="btn ghost" href="#" data-cta="line">立即預約</a>
+      </div>
+      <div class="plan feature">
+        <span class="tag">很陌生建議</span>
+        <h3>4 次 · 完整</h3>
+        <div class="price">$12,000</div><div class="unit">轎車 · 休旅 $14,800</div>
+        <p class="desc">從零到敢開，最完整的陪練。</p>
+        <a class="btn" href="#" data-cta="line">立即預約</a>
+      </div>
+    </div>
+
+    <h3 style="text-align:center;color:var(--coral);margin:26px 0 14px;font-size:18px">🚙 B · 開自己的車（教練陪同指導，較省）</h3>
+    <div class="plans">
+      <div class="plan">
+        <h3>體驗 1 次</h3>
+        <div class="price">$2,600</div><div class="unit">2.5 小時</div>
+        <p class="desc">用你自己的車，練最熟悉的手感。</p>
+        <a class="btn ghost" href="#" data-cta="line">預約體驗</a>
+      </div>
+      <div class="plan feature">
+        <span class="tag">最划算</span>
+        <h3>3 次</h3>
+        <div class="price">$6,900</div><div class="unit">2.5 小時 × 3</div>
+        <p class="desc">最多人選的入門組合。</p>
+        <a class="btn" href="#" data-cta="line">立即預約</a>
+      </div>
+      <div class="plan">
+        <h3>4 次 · 完整</h3>
+        <div class="price">$8,800</div><div class="unit">2.5 小時 × 4</div>
+        <p class="desc">深度陪練到完全安心。</p>
+        <a class="btn ghost" href="#" data-cta="line">立即預約</a>
+      </div>
+    </div>
+    <p class="note">主題專修（停車／高速等單項，2 次）：自備車 $4,800、教練備車 $6,600。<br>假日每次 +$200 · 雙北市區可接送，外圍另計 · 可再加課。實際方案以洽詢確認為準。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec">上課流程</h2>
+    <p class="sec-sub">四步驟，簡單開始。</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><b>LINE 私訊</b><p>告訴我你的需求、地點與方便的時段，確認你已持有正式駕照。</p></div></div>
+      <div class="step"><div class="n">2</div><div><b>確認與預約</b><p>選方案、付訂金、排定時間，課前會說明安全與保險規範。</p></div></div>
+      <div class="step"><div class="n">3</div><div><b>上路陪練</b><p>用你真實的生活路線客製，全程行車記錄器，安全第一。</p></div></div>
+      <div class="step"><div class="n">4</div><div><b>進度回饋</b><p>每堂課後給你進度與待加強，一步步練到敢自己開。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <h2 class="sec">為什麼選「路伴」</h2>
+    <div class="why-grid">
+      <div class="item"><b>新手友善</b><p>耐心、不兇、不催，女性與高齡學員也安心。</p></div>
+      <div class="item"><b>路線客製</b><p>練你真的會走的路，不是制式繞圈。</p></div>
+      <div class="item"><b>透明定價</b><p>價格公開在這，沒有隱藏費用。</p></div>
+      <div class="item"><b>安全為先</b><p>合格教練、全程行車記錄器、明確安全規範。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq">
+    <h2 class="sec">常見問題</h2>
+    <p class="sec-sub">　</p>
+    <details><summary>我還沒有駕照可以上課嗎？</summary><p>不行喔。為符合法規，本服務僅接受已領有正式汽車駕照的學員，課程是「陪你練習與指導」，學員本人為法律上的駕駛人。若你還沒考到照，建議先到立案駕訓班考取。</p></details>
+    <details><summary>要用我自己的車，還是你提供車？</summary><p>兩種都可以。開自己的車（B 軌）比較省、手感最熟悉；沒有車或想練不同車就選教練備車（A 軌），費用已含有保險的安全車輛、油資與大部分雙北接送。預約時告訴我你的選擇即可。</p></details>
+    <details><summary>可以接送嗎？</summary><p>雙北市區可接送，外圍地區另計。預約時告訴我你的地點即可。</p></details>
+    <details><summary>一次多久？要上幾次才會敢開？</summary><p>每次 2.5 小時。因人而異，多數人完整 3–4 次能明顯建立信心；很陌生建議 4 次，也可以第一次上完再決定次數。只想補強單一弱點可選主題專修。</p></details>
+    <details><summary>怎麼付款、可以退費嗎？</summary><p>可轉帳或刷卡，預約時付訂金。退費規則會在報名同意書中明列，未上課的堂數依約辦理。</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>準備好，自己開回家了嗎？</h2>
+    <p>體驗單次 2.5 小時：開自己的車 $2,600 起、教練備車 $3,600 起。一句訊息，就是你重新上路的開始。</p>
+    <a class="btn" href="#" data-cta="line">加 LINE 預約體驗 →</a>
+    <div style="margin-top:16px;font-size:14px;opacity:.9">或在 Instagram / Facebook 搜尋「路伴 道路駕駛」</div>
+  </div>
+</section>
+
+<footer>
+  路伴 · 道路駕駛陪練｜負責人：安妮｜服務地區：雙北<br>
+  <div class="legal">
+    本服務為協助「已領有正式駕駛執照」者進行道路駕駛練習之陪同指導，學員為法律上之駕駛人並自負駕駛責任，非立案汽車駕駛訓練班，亦不提供無照駕駛教學。實際服務內容、價格與權利義務以雙方簽署之報名同意書為準。
+  </div>
+</footer>
+
+<script>
+// CTA 連結待替換：把下面的 LINE_URL 換成你的 LINE 官方帳號加好友連結（建議加上 ?utm_source=landing）
+var LINE_URL = "#"; // 例：https://lin.ee/xxxxxxx?utm_source=landing
+document.querySelectorAll('[data-cta="line"]').forEach(function(a){ if(LINE_URL!=="#") a.href=LINE_URL; });
+</script>
+</body>
+</html>
